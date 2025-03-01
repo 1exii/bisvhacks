@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "DM Sans", serif;
+}
+
+body, html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quiet {
+  background-color: #1d2d2d;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.toggle-slot {
+  font-size: 10px;
+  position: relative;
+  height: 35vh;
+  width: 70vh;
+  border-radius: 100vh;
+  background-color: rgba(199, 230, 204, 0.8);
+  transition: background-color 250ms;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: #4d6f47;
+}
+
+.toggle-button {
+  transform: translate(3vh, 2.5vh);
+  position: absolute;
+  height: 30vh;
+  width: 30vh;
+  border-radius: 50%;
+  background-color: #3d5c40;
+  transition: background-color 250ms, transform 500ms cubic-bezier(.5, 1.8,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: #d0e1c1;
+  transform: translate(36.5vh, 2.5vh);
+}
+
+.head {
+  position: fixed;
+  display: flex;
+  padding: 50px 100px; 
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  transition: 0.5s;
+}
+
+header.sticky {
+  padding: 40px 100px;
+  background: #f8f8f8;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #75bc77; 
+  position: sticky;
+  z-index: 1000;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  display: inline-block;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #75bc77; 
+}

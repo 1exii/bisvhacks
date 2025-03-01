@@ -1,21 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: "Open Sans", Arial, Helvetica, sans-serif;
-    margin: 0;
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    margin: 20px;
     padding: 20px;
     display: inline-grid;
     grid-template-columns: 1fr 1fr;
     padding-left: 50px;
+    overflow: hidden; 
+    background-color: #ededed;
 }
 
 header {
+    margin: 0px;
     position: fixed;
     display: flex;
     padding: 50px 100px;
@@ -46,18 +48,36 @@ header {
     display: inline-block;
     margin: 0 15px;
     text-decoration: none;
-    color: #75bc77;
+    color: #28764f;
   }
+
+.control {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#startBtn {
+  position: absolute;
+  right:74.5%;
+}
+
+#stopBtn {
+  position: absolute;
+  right:61.5%;
+}
 
 button {
     border-radius: 5px;
-    background-color: #0095ff;
+    background-color: #75bc77;
     color: white;
     border: none;
     padding: 10px;
+    margin-left: 30px;
     margin: 10px 5px;
     width: 150px;
     height: 60px;
+    flex-direction: column;
+    align-items: center;
 }
 
 button:disabled {
@@ -66,43 +86,24 @@ button:disabled {
 }
 
 button:hover:not(:disabled) {
-    background: #0067d6;
+    background: #62a965;
 }
 
+
 header .logo {
-    font-size: 25px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
-    color: #75bc77;
-    position: sticky;
-    z-index: 1000;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #28764f;
+  position: sticky;
+  z-index: 1000;
 }
   
 ::selection {
-    background: #75bc77;
-    color: #ffffff;
-}
-  
-header.menu-active {
-    background: #ffffff;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-}
-  
-header.menu-active .logo {
-    color: #75bc77;
-}
-  
-header.menu-active ul li a {
-    color: #75bc77;
-}
-  
-header:hover,
-header ul li a:hover,
-.logo:hover,
-.toggle:hover {
-    color: #6ead70;
+  background: #28764f;
+  color: #ffffff;
 }
 
 video {
@@ -115,7 +116,8 @@ video {
 }
 
 .container {
-    margin-top: 150px; /*PLS CHANGE*/
+    margin-left: 50px;
+    margin-top: 120px; /*PLS CHANGE*/
     display: flex;
     flex-direction: column;
 }
@@ -129,21 +131,6 @@ video {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-header .logo {
-  font-size: 25px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 2px;
-  color: #75bc77;
-  position: sticky;
-  z-index: 1000;
-}
-
-::selection {
-  background: #75bc77;
-  color: #ffffff;
-}
 
 header.menu-active {
   background: #ffffff;
@@ -151,18 +138,18 @@ header.menu-active {
 }
 
 header.menu-active .logo {
-  color: #75bc77;
+  color: #28764f;
 }
 
 header.menu-active ul li a {
-  color: #75bc77;
+  color: #28764f;
 }
 
 header:hover,
 header ul li a:hover,
 .logo:hover,
 .toggle:hover {
-  color: #6ead70;
+  color: #1d623f;
 }
 
 @media (max-width: 991px) {
@@ -201,18 +188,22 @@ header ul li a:hover,
   header ul li a {
     margin: 10px;
     font-size: 20px;
-    color: #75bc77;
+    color: #28764f;
   }
 }
 
 :root {
   --grey: #f5f5f5;
-  --blue: #3d88f9;
+  --green: #75bc77;
 
 }
 
+/* ::-webkit-scrollbar {
+  visibility: hidden;
+} */
+
 .chat-window {
-  margin: 0;
+  margin-right:90px;
   box-shadow: none;
   border-radius: 20px;
   position: absolute;
@@ -226,7 +217,7 @@ header ul li a:hover,
   padding-top: 200px;
 
   * {
-      font-family: "Raleway", sans-serif;
+      font-family: "DM Sans", sans-serif;
       /*margin-top: 150px;*/
   }
   
@@ -262,8 +253,9 @@ header ul li a:hover,
       div.user {
           display: flex;
           justify-content: flex-end;
+          word-wrap: break-word;
           p {
-              background-color: var(--blue);
+              background-color: var(--green);
               color: white;
               padding: 16px;
               }
@@ -294,7 +286,7 @@ header ul li a:hover,
           border-radius: 100%;
           border: none;
           margin-left: 12px;
-          background-color: var(--blue);
+          background-color: var(--green);
           color: white;
           display: flex;
           justify-content: center;

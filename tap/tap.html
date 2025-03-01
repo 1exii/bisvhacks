@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pocket Therapy | Tap</title>
+  <link rel="stylesheet" href="tap.css" />
+</head>
+<body class="quiet">
+  <section class="quiet">
+    <header class="head">
+      <a href="../index.html" class="logo">Pocket Therapy</a>
+      <div class="toggle"></div>
+      <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../garden/garden.html">Garden</a></li>
+        <li><a href="../pocket-therapist/pocket-therapist.html">Pocket Therapist</a></li>
+      </ul>
+    </header>
+  </section>
+  <audio id="audio" src="../audio/click.wav"></audio>
+  <div id="pulsing" tabindex="0"></div>
+  <div id="pulsing2" tabindex="0"></div>
+  <div id="clicker" tabindex="0"></div>
+  <div id="counter">0</div>
+  <div id="motif">You can do it!</div>
+  <script>
+
+    let counter = 0;
+
+    document.getElementById('clicker').onclick = () => {
+      const audio = document.getElementById('audio');
+      audio.play();
+
+      counter = counter + 1;
+      document.getElementById('counter').innerText = counter;
+
+      if (counter === 50) {
+        document.getElementById('motif').innerText = '"Nothing is impossible. The word itself says \'I\'m possible!\'" — Audrey Hepburn';
+      }
+
+      if (counter === 100) {
+        document.getElementById('motif').innerText = '"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time." - Thomas A. Edison';
+      }
+
+      if (counter === 150) {
+        document.getElementById('motif').innerText = '"We will fail when we fail to try.” - Rosa Parks';
+      }
+
+      if (counter === 200) {
+        document.getElementById('motif').innerText = '"Life is 10% what happens to you and 90% how you react to it." - Charles R. Swindoll';
+      }
+
+      if (counter === 250) {
+        document.getElementById('motif').innerText = '"We may encounter many defeats but we must not be defeated." - Maya Angelou';
+      }
+
+      if (counter === 300) {
+        document.getElementById('motif').innerText = '"Once you replace negative thoughts with positive ones, you\'ll start having positive results." - Willie Nelson';
+      }
+
+      if (counter === 350) {
+        document.getElementById('motif').innerText = '"Keep your face to the sunshine and you cannot see a shadow." - Helen Keller';
+      }
+
+      if (counter === 400) {
+        document.getElementById('motif').innerText = '"The purpose of life is a life of purpose." - Robert Byrne';
+      }
+
+      if (counter === 450) {
+        document.getElementById('motif').innerText = '"Success is not final; failure is not fatal: It is the courage to continue that counts." - Winston Churchill';
+      }
+
+      if (counter === 500) {
+        document.getElementById('motif').innerText = '"Develop success from failures. Discouragement and failure are two of the surest stepping stones to success." - Dale Carnegie';
+      }
+    };
+  </script>
+</body>
+</html>

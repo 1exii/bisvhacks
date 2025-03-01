@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "DM Sans", serif;
+}
+
+
+.quiet {
+  background-color: black;
+}
+
+.head {
+  position: fixed;
+  display: flex;
+  padding: 50px 100px; 
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  transition: 0.5s;
+}
+
+header.sticky {
+  padding: 40px 100px;
+  background: #f8f8f8;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  color: #ffffff; 
+  position: sticky;
+  z-index: 1000;
+}
+
+header ul {
+  position: relative;
+  display: flex;
+  list-style: none;
+}
+
+header ul li a {
+  position: relative;
+  display: inline-block;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ffffff; 
+}
+
+section {
+  padding: 100px;
+}
+
+#clicker {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin: 0 auto;
+  line-height: 200px;
+  user-select: none;
+  text-align: center;
+  margin-top: -200px;
+  background-color: lightblue;
+  animation: colorchange 20s infinite;
+  position: relative;
+}
+
+#pulsing {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin: 0 auto;
+  line-height: 200px;
+  user-select: none;
+  text-align: center;
+  margin-top: -70px;
+  background-color: lightblue;
+  position: relative;
+  animation: pulse 2.5s ease-out infinite, colorchange 20s infinite;
+}
+
+#pulsing2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin: 0 auto;
+  line-height: 200px;
+  user-select: none;
+  text-align: center;
+  margin-top: -200px;
+  background-color: lightblue;
+  position: relative;
+  animation: pulse 2.5s ease-out infinite, colorchange 20s infinite;
+  animation-delay: 1.3s;
+}
+
+@keyframes grow {
+  0% {
+    width: 200px;
+    height: 200px;
+  } 100% {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+@keyframes colorchange {
+
+  0%,
+  100% {
+    background-color: #f56a3f;
+  }
+
+  25% {
+    background-color: #9e42b0;
+  }
+
+  50% {
+    background-color: lightblue;
+  }
+
+  75% {
+    background-color: #9e42b0;
+  }
+}
+
+@keyframes pulse {
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+
+#counter {
+  margin-top: 50px;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+#motif {
+  color: white;
+  text-align: center;
+}
