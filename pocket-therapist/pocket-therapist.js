@@ -194,7 +194,7 @@ async function detectFeatures() {
             }
 
             // display emotions (temporary)
-            if (Date.now() - lastSadnessCheck >= (10000)) {
+            if (Date.now() - lastSadnessCheck >= (1000)) {
                 if (expression === 'sad') {
                     sendMessage(`$${expression}`, false);
                     console.log('Sadness detected');

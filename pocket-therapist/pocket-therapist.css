@@ -13,7 +13,8 @@ body {
     grid-template-columns: 1fr 1fr;
     padding-left: 50px;
     overflow: hidden; 
-    background-color: #ededed;
+    /*background-color: #ededed;*/
+    background-color: #1d2d2d;
 }
 
 header {
@@ -67,8 +68,9 @@ header {
 }
 
 button {
+    font-family: "DM Sans", sans-serif;
     border-radius: 5px;
-    background-color: #75bc77;
+    background-color: var(--green);
     color: white;
     border: none;
     padding: 10px;
@@ -78,15 +80,26 @@ button {
     height: 60px;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.3s, background 0.3s;
 }
 
 button:disabled {
-    background: #cccccc;
+    background: #a8a8a8;
     cursor: not-allowed;
 }
 
 button:hover:not(:disabled) {
-    background: #62a965;
+  background: #216844;
+  transform: scale(1.05);
+}
+
+button:hover::after {
+  z-index: 1;
+  transform: scale(1.2);
+}
+
+button::after, button::after {
+  transition: transform 1s;
 }
 
 
@@ -107,7 +120,7 @@ header .logo {
 }
 
 video {
-    background-color: #cccccc !important;
+    background-color: #a8a8a8 !important;
     width: 80vh;
     height: 45vh;
     display: block;
@@ -193,14 +206,14 @@ header ul li a:hover,
 }
 
 :root {
-  --grey: #f5f5f5;
-  --green: #75bc77;
+  --grey: #cccccc;
+  --green: #28764f;
 
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   visibility: hidden;
-} */
+}
 
 .chat-window {
   margin-right:90px;
@@ -209,30 +222,25 @@ header ul li a:hover,
   position: absolute;
   bottom: 60px;
   right: 20px;
-  height: 550px;
+  height: 360px;
   width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 200px;
+  padding-top: 10px;
+  background-color: #293f36;
 
   * {
       font-family: "DM Sans", sans-serif;
       /*margin-top: 150px;*/
   }
-  
-  .close {
-      border: none;
-      padding: 8px 0;
-      background-color: #1a1a1a;
-      color: white;
-      border-radius: 20px 20px 0 0;
-  }
+
 
   .chat {
       flex: 1;
       padding: 0 8px;
       overflow-y: scroll;
+      margin-left: 5px;
 
       p {
           border-radius: 20px;
@@ -244,6 +252,7 @@ header ul li a:hover,
       }
 
       div.model {
+          margin-bottom: 10px;
           p {
               background-color: var(--grey);
               padding: 16px;
@@ -251,6 +260,7 @@ header ul li a:hover,
       }
 
       div.user {
+          margin-bottom: 10px;
           display: flex;
           justify-content: flex-end;
           word-wrap: break-word;
@@ -268,7 +278,10 @@ header ul li a:hover,
       justify-content: center;
       align-items: center;
       padding: 0 8px;
-      border-top: 1px solid lightgrey;
+      border-top: 1px solid #3d574c;
+      background-color: #3d574c;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
 
       input {
           height: 40px;
@@ -278,6 +291,10 @@ header ul li a:hover,
           border-radius: 20px;
           padding-left: 20px;
           font-size: 16px;
+      }
+
+      input:focus {
+          outline: none;
       }
 
       button {
@@ -292,5 +309,9 @@ header ul li a:hover,
           justify-content: center;
           align-items: center;
       }
+
+      button:hover:not(:disabled) {
+        background: #216844;
+    }
   }
 }
