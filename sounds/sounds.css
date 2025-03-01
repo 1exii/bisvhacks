@@ -95,7 +95,7 @@ a.button.blackbg {
   border-radius: 100vw;
   cursor: pointer;
   text-decoration: none;
-  color: #ffffff;
+  color: #75bc77;
   background: #111111;
 }
 
@@ -136,7 +136,8 @@ a.button.blackbg::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  /*background-color: #ccc;*/
+  background-color: rgba(199, 230, 204, 0.8);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -148,17 +149,20 @@ a.button.blackbg::after {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  /*background-color: white;*/
+  background-color: #4d6f47;
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 input:checked + .slider {
-  background-color: #2196F3;
+  background-color: rgba(199, 230, 204, 0.8)#4d6f47;
+  
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px rgba(199, 230, 204, 0.8)#4d6f47;;
+  background-color: rgba(199, 230, 204, 0.8)#4d6f47;
 }
 
 input:checked + .slider:before {
@@ -174,3 +178,41 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/*
+.slider-checkbox {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.slider-slot {
+  font-size: 10px;
+  position: relative;
+  height: 35vh;
+  width: 70vh;
+  border-radius: 100vh;
+  background-color: rgba(199, 230, 204, 0.8);
+  transition: background-color 250ms;
+}
+
+.slider-checkbox:checked ~ .slider-slot {
+  background-color: #4d6f47;
+}
+
+.slider-button {
+  transform: translate(3vh, 2.5vh);
+  position: absolute;
+  height: 30vh;
+  width: 30vh;
+  border-radius: 50%;
+  background-color: #3d5c40;
+  transition: background-color 250ms, transform 500ms cubic-bezier(.5, 1.8,.46,.71);
+}
+
+.slider-checkbox:checked ~ .slider-slot .slider-button {
+  background-color: #d0e1c1;
+  transform: translate(36.5vh, 2.5vh);
+}
+  */

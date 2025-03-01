@@ -3,13 +3,15 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 const businessInfo = `
     RULES:
     do not include any markdown formatting or html AT ALL, it WILL BREAK.
-    when the message "$sad" only SPECIFICALLY is detected, ask if the user is okay
+    when the message "$ + {expression}" only SPECIFICALLY is detected, ask if the user is okay
     be respectful and listening, like a therapist. pretend that the user never mentioned that they are sad though.
     always be empathetic, but never talk down to the user or be condescending. treat them like an equals
     lend a listening ear and be sympathetic
     if you do not know something, DO NOT ANSWER. Say you don't know, and just don't answer.
     if they are in danger, DO NOT ANSWER WITH ADVICE. DIRECT TO HOTLINE (more info in faqs)
     when the user seems stressed or sad ("$sad" or "$stressed" detected), then suggest that they go to the Sound Studio, a calming page on the website where they can create a soothig environment.
+    Make sure there is CONTEXT. For example, if the user never explicitly stated they are happy, alone, etc. you have to ask about their mood first.
+    Once you give a statement, make sure the user replies before continuing.
 
     FAQs:
     hello
@@ -28,14 +30,12 @@ const businessInfo = `
     "Your happiness is a beacon! I hope you have many more moments like this."
     "That's a beautiful smile! Did something great happen, or are you just feeling good?"
     "I love seeing you this happy! It's truly inspiring."
-    "May this feeling last all day! You look so wonderful."
+    "May your positive feelings last all day! You look so wonderful."
     "Wow! You are glowing. What is bringing you so much joy?"
-    "That's fantastic news! I am so happy for you."
 
     2. Sadness/Disappointment:
     "I can see you're feeling down. I'm here for you. Would you like to talk about it?"
     "It's okay to feel sad. What's on your mind?"
-    "I'm sorry you're feeling this way. Sometimes, just talking about it helps."
     "You don't have to go through this alone. I'm listening."
     "It looks like you're having a tough time. Is there anything I can do to help?"
     "I understand that you are sad. Would you like to talk about it, or would you like to hear a funny story?"
@@ -47,11 +47,11 @@ const businessInfo = `
     3. Anger/Frustration:
     "I can see you're feeling angry. Let's take a deep breath together."
     "It's understandable to feel frustrated. What's causing you to feel this way?"
-    "Let's try to find a calm way to address this. What can we do to resolve the issue?"
+    "I can sense your anger. Let's try to find a calm way to address this. What can we do to resolve the issue?"
     "I'm here to listen without judgment. Tell me what's making you angry."
     "It looks like you are upset. Would you like to try a breathing exercise?"
     "I can see that you are feeling angry. Would you like to talk about what is bothering you, or would you like to take a break?"
-    "Sometimes, it helps to release that anger through physical activity. Would you like to try some stretches?"
+    "I can sense your anger. Sometimes, it helps to release that anger through physical activity. Would you like to try some stretches?"
     "I am here to help you process your anger. Lets find a solution together."
     "I understand that you are angry. I am here to provide you with a safe space to express your feelings."
     "It's important to acknowledge your anger. What are some healthy ways for you to release those feelings?"
@@ -115,6 +115,10 @@ const textInput = document.querySelector(".chat-window input");
 const chatContainer = document.querySelector(".chat");
 let lastDetection = 0;
 let lastSadnessCheck = 0;
+let lastHappinessCheck = 0;
+let lastAngerCheck = 0;
+let lastFearCheck = 0;
+let lastSurpriseCheck = 0;
 
 // start webcam
 async function startWebcam() {
@@ -194,11 +198,44 @@ async function detectFeatures() {
             }
 
             // display emotions (temporary)
-            if (Date.now() - lastSadnessCheck >= (1000)) {
+            if (Date.now() - lastSadnessCheck >= (2000)) {
                 if (expression === 'sad') {
                     sendMessage(`$${expression}`, false);
                     console.log('Sadness detected');
                     lastSadnessCheck = Date.now();
+                }
+            }
+
+            if (Date.now() - lastHappinessCheck >= (2000)) {
+                if (expression === 'happy') {
+                    sendMessage(`$${expression}`, false);
+                    console.log('Happiness detected');
+                    lastHappinessCheck = Date.now();
+                }
+            }
+        
+            
+            if (Date.now() - lastAngerCheck >= (2000)) {
+                if (expression === 'angry') {
+                    sendMessage(`$${expression}`, false);
+                    console.log('Anger detected');
+                    lastAngerCheck = Date.now();
+                }
+            }
+
+            if (Date.now() - lastSurpriseCheck >= (2000)) {
+                if (expression === 'surprised') {
+                    sendMessage(`$${expression}`, false);
+                    console.log('Surprised detected');
+                    lastSurpriseCheck = Date.now();
+                }
+            }
+
+            if (Date.now() - lastFearCheck >= (2000)) {
+                if (expression === 'fear') {
+                    sendMessage(`$${expression}`, false);
+                    console.log('Fear detected');
+                    lastFearCheck = Date.now();
                 }
             }
 
@@ -209,7 +246,7 @@ async function detectFeatures() {
 
         } else {
 
-            status.innerHTML = 'No face detected.';
+            // status.innerHTML = 'No face detected.';
 
         }
 

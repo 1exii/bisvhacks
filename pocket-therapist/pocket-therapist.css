@@ -130,7 +130,7 @@ video {
 
 .container {
     margin-left: 50px;
-    margin-top: 120px; /*PLS CHANGE*/
+    margin-top: 20vh; /*PLS CHANGE*/
     display: flex;
     flex-direction: column;
 }
@@ -220,7 +220,7 @@ header ul li a:hover,
   box-shadow: none;
   border-radius: 20px;
   position: absolute;
-  bottom: 60px;
+  margin-top: 15vh;
   right: 20px;
   height: 360px;
   width: 500px;
