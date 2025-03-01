@@ -279,6 +279,8 @@ async function sendMessage(userMessage = null, showMessage = true) {
                         <p>${userMessage}</p>
                     </div>
                 `);
+
+                chatContainer.scrollTop = chatContainer.scrollHeight;
             }
 
             const chat = model.startChat(messages);
@@ -289,6 +291,8 @@ async function sendMessage(userMessage = null, showMessage = true) {
                     <p>${result.response.text()}</p>
                 </div>
             `);
+
+            chatContainer.scrollTop = chatContainer.scrollHeight;
 
             messages.history.push({
                 role: "user",
@@ -312,6 +316,8 @@ async function sendMessage(userMessage = null, showMessage = true) {
                 <p>The message could not be sent. Please try again.</p>
             </div>
             `);
+
+            chatContainer.scrollTop = chatContainer.scrollHeight;
         }
 
     }
