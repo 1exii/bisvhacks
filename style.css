@@ -261,10 +261,13 @@ header ul li a:hover,
   margin-top: 2em;
   margin-left: 4%;
   cursor: pointer;
+  transition: transform 0.2s ease;
   box-sizing: 0 5px 10 px rgba(0,0,0,0.1);
 }
 
-
+.btn:active{
+  transform: scale(0.96);
+}
 
 a.btn, .btn {
   padding: 1.2em 2.5em;
@@ -282,7 +285,9 @@ a.btn, .btn {
   text-align: center;
 }
 
+
 a.btn::after, .btn::after {
+  
   padding: 1.2em 2.5em;
   position: absolute;
   z-index: -1;
@@ -292,7 +297,10 @@ a.btn::after, .btn::after {
   border-radius: 50px;
   background: #ffffff;
   width: 160px;
+  
 }
+
+
 
 a.btn:hover, .btn:hover {
   background: #f0f0f0;
