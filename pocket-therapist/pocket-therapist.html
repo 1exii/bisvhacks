@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Therapy</title>
+    <link rel="stylesheet" type="text/css" href="pocket-therapist.css">
+    <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1/dist/face-api.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Click Garden</a>
+        <div class="toggle"></div>
+        <ul class="menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../pocket-therapist/pocket-therapist.html">Pocket Therapist</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="video-container">
+            <video id="video" autoplay></video>
+        </div>
+        <div class="status-container">
+            <div id="status">Loading...</div>
+        </div>
+        <div class="controls">
+            <button id="startBtn">Start Webcam</button> 
+            <button id="stopBtn" disabled>Stop Webcam</button>
+        </div>
+    </div>
+    <script src="pocket-therapist.js"></script>
+</body>
+</html>
