@@ -198,7 +198,7 @@ async function detectFeatures() {
             }
 
             // display emotions (temporary)
-            if (Date.now() - lastSadnessCheck >= (2000)) {
+            if (Date.now() - lastSadnessCheck >= (3000)) {
                 if (expression === 'sad') {
                     sendMessage(`$${expression}`, false);
                     console.log('Sadness detected');
@@ -206,7 +206,7 @@ async function detectFeatures() {
                 }
             }
 
-            if (Date.now() - lastHappinessCheck >= (2000)) {
+            if (Date.now() - lastHappinessCheck >= (3000)) {
                 if (expression === 'happy') {
                     sendMessage(`$${expression}`, false);
                     console.log('Happiness detected');
@@ -215,7 +215,7 @@ async function detectFeatures() {
             }
         
             
-            if (Date.now() - lastAngerCheck >= (2000)) {
+            if (Date.now() - lastAngerCheck >= (3000)) {
                 if (expression === 'angry') {
                     sendMessage(`$${expression}`, false);
                     console.log('Anger detected');
@@ -223,7 +223,7 @@ async function detectFeatures() {
                 }
             }
 
-            if (Date.now() - lastSurpriseCheck >= (2000)) {
+            if (Date.now() - lastSurpriseCheck >= (3000)) {
                 if (expression === 'surprised') {
                     sendMessage(`$${expression}`, false);
                     console.log('Surprised detected');
@@ -231,7 +231,7 @@ async function detectFeatures() {
                 }
             }
 
-            if (Date.now() - lastFearCheck >= (2000)) {
+            if (Date.now() - lastFearCheck >= (3000)) {
                 if (expression === 'fear') {
                     sendMessage(`$${expression}`, false);
                     console.log('Fear detected');
